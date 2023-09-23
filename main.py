@@ -1,8 +1,12 @@
-from api.oanda_api import OandaAPI
+from api.oanda_api import OandaApi
 
 
 def main():
-    api = OandaAPI()
+    print("Fetching data...!!!")
+    api = OandaApi()
+    data = api.get_account_summary()
+    # [print(x['name']) for x in data]
+    print(data)
 
 
 if __name__ == '__main__':
