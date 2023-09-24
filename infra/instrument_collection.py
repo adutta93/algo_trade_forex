@@ -21,7 +21,7 @@ class InstrumentCollection:
         for item in data:
             key = item["name"]
             instrument_dict[key] = {k: item[k] for k in self.inst_keys}
-
+        # !TODO: We can cached this data somewhere e.g Redis, Memecached etc
         file_name = f"{path}/{self.file_name}"  # testing purpose
         with open(file_name, "w") as f:
             f.write(json.dumps(instrument_dict, indent=2))
@@ -42,7 +42,7 @@ class InstrumentCollection:
 # * Function to print instruments
     def print_instruments(self):
         print("Printing instruments....!!")
-        [print(key, val) for key, val in self.instrument_dict.items()]
+        # [print(key, val) for key, val in self.instrument_dict.items()]
         print(len(self.instrument_dict.keys()), "instruments")
 
 

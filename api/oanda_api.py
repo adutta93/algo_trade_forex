@@ -34,6 +34,7 @@ class OandaApi:
         ok, data = self.make_request(url)
 
         if ok == True and data_key_type in data:
+            print("Getting this data from get_account_data")
             return data[data_key_type]
         else:
             print("ERROR: get_account_data()", data)
